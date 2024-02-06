@@ -47,7 +47,7 @@ brew install jabba
 
 ```sh
 export JABBA_VERSION=...
-curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://github.com/herouu/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
 ```
 
 > Use the same command to upgrade, you can also upgrade from shyiko's 0.11.2 by running this command
@@ -56,7 +56,7 @@ The script modifies common shell rc files by default. To skip these provide the 
 
 ```sh
 export JABBA_VERSION=...
-curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh
+curl -sL https://github.com/herouu/jabba/raw/main/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh
 ```
 
 Make sure to source `jabba.sh` in your environment if you skip it:
@@ -68,7 +68,7 @@ export JABBA_VERSION=...
 
 > In [fish](https://fishshell.com/) command looks a little bit different -
 > export JABBA_VERSION=...
-`curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash; and . ~/.jabba/jabba.fish` 
+`curl -sL https://github.com/herouu/jabba/raw/main/install.sh | bash; and . ~/.jabba/jabba.fish` 
 
 > If you don't have `curl` installed - replace `curl -sL` with `wget -qO-`.
 
@@ -85,7 +85,7 @@ integration script(s) to be included in the final Docker image, all you want is 
 ```dockerfile
 FROM buildpack-deps:jessie-curl
 
-RUN curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | \
+RUN curl -sL https://github.com/herouu/jabba/raw/main/install.sh | \
     JABBA_COMMAND="install 1.15.0 -o /jdk" bash
 
 ENV JAVA_HOME /jdk
