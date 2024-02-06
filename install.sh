@@ -157,7 +157,7 @@ if [ "$JABBA_COMMAND" != "" ]; then
     fi
 fi
 
-sed -e "s=\$JABBA_HOME_TO_EXPORT=$JABBA_HOME_TO_EXPORT=g" -e "s=\$JABBA_BIN_TO_EXPORT=$JABBA_BIN_TO_EXPORT=g" https://raw.githubusercontent.com/herouu/jabba/main/jabba.sh > "${JABBA_SHARE}/jabba.sh"
+curl -sL https://raw.githubusercontent.com/herouu/jabba/main/jabba.sh | sed -e "s=\$JABBA_HOME_TO_EXPORT=$JABBA_HOME_TO_EXPORT=g" -e "s=\$JABBA_BIN_TO_EXPORT=$JABBA_BIN_TO_EXPORT=g" > "${JABBA_SHARE}/jabba.sh"
 
 SOURCE_JABBA="\n[ -s \"$JABBA_SHARE/jabba.sh\" ] && source \"$JABBA_SHARE/jabba.sh\""
 
@@ -197,8 +197,7 @@ if [ ! "$SKIP_RC" ]; then
     fi
 fi
 
-sed -e "s=\$JABBA_HOME_TO_EXPORT=$JABBA_HOME_TO_EXPORT=g" -e "s=\$JABBA_BIN_TO_EXPORT=$JABBA_BIN_TO_EXPORT=g" https://raw.githubusercontent.com/herouu/jabba/main/jabba.fish > "${JABBA_SHARE}/jabba.fish"
-
+curl -sL https://raw.githubusercontent.com/herouu/jabba/main/jabba.fish | sed -e "s=\$JABBA_HOME_TO_EXPORT=$JABBA_HOME_TO_EXPORT=g" -e "s=\$JABBA_BIN_TO_EXPORT=$JABBA_BIN_TO_EXPORT=g" > "${JABBA_SHARE}/jabba.fish"
 FISH_SOURCE_JABBA="\n[ -s \"$JABBA_SHARE/jabba.fish\" ]; and source \"$JABBA_SHARE/jabba.fish\""
 
 if [ -f "$(which fish 2>/dev/null)" ]; then
